@@ -3,11 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+            {% stylesheets 'bundles/app/css/*' filter="cssrewrite" %}
+            <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+            {% endstylesheets %}
+
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% javascripts
+            '@AppBundle/Resources/public/js/*'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
     </body>
 </html>

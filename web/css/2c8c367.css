@@ -44,7 +44,7 @@
 
 #ad {
     background-color: white;
-    background-image: url("../slike/reklama.jpg");
+    background-image: url("../bundles/app/images/custom/adv.jpg");
     background-size: 245px 200px;
     height: 200px;
 }
@@ -199,3 +199,4 @@
         width: 250px;
     }
 }
+

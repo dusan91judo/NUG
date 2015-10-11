@@ -1,0 +1,11 @@
+fos_user_all:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#fos_user_change_role:
+#      path: /roles
+#      defaults: {_controller: UserBundle:User:editRoles}
+
+#fos_user_change_role2:
+#      path: /roles2
+#      defaults: {_controller: UserBundle:User:editRoles2}
+#      methods: [GET]

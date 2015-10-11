@@ -1,0 +1,5 @@
+live:
+    path: /live
+    defaults: { _controller: AppBundle:Default:index, _locale: en }
+    requirements:
+        _locale:  en|sr

@@ -1,0 +1,6 @@
+#live:
+#    path: /uzivo
+#    defaults:  { _controller: AppBundle:Default:index, _locale: sr }
+#    requirements:
+#        _locale:  en|sr
+symfony.is.great: Symfony2 je sjajan

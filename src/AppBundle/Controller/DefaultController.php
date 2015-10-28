@@ -20,8 +20,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/live", defaults={"_locale": "sr"}, requirements={
-     *    "_locale": "en|fr"
+     * @Route("/live", name="live", defaults={"_locale": "sr"}, requirements={
+     *    "_locale": "en|sr"
      * })
      */
     public function indexAction(Request $request)
@@ -37,7 +37,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/trt", defaults={"_locale": "sr"}, requirements={
-     *    "_locale": "en|fr"
+     *    "_locale": "en|sr"
      * })
      */
     public function trtAction()

@@ -6,3 +6,8 @@ parameters:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+services:
+    my.twig.controller.exception:
+        class: AppBundle\Controller\ExceptionController
+        arguments: [@twig, %kernel.debug%]

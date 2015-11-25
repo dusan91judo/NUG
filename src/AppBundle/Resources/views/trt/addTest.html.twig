@@ -1,0 +1,14 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block content %}
+
+    <div><label>add Test view</label></div>
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.region) }}
+    <div>
+        <input type="submit" value="Dodaj test grad" />
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

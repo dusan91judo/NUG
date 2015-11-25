@@ -1,0 +1,16 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block content %}
+
+    <div class="trt"><label>add Topic view</label></div>
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+{{ form_widget(form.city) }}
+    <div>
+        <input type="submit" value="Dodaj grad" />
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block content %}
+
+    <div>{{ city.id }} - {{ city.name }}</div>
+
+    <div><label>edit City view</label></div>
+
+    {{ form_start(form, {'action' :  editUrl , 'method': 'PUT' }) }}
+    {{ form_row(form.name, {'value' : city.name} ) }}
+    {{ form_row(form.region, {'value' : city.region} ) }}
+    <div>
+        <input type="submit" value="Izmeni grad" />
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}

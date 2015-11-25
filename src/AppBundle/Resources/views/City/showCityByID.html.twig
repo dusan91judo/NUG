@@ -1,0 +1,9 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block content %}
+
+    <div>{{ city.id }} - {{ city.name }}</div>
+    <div><a href="{{ editUrl }}">Izmeni grad</a></div>
+    <div><a href="{{ deleteUrl }}">Obrisi grad</a></div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block content %}
+
+    {% for city in cities %}
+        <div> {{ city.id }} - {{ city.name }} </div>
+    {% endfor %}
+
+{% endblock %}

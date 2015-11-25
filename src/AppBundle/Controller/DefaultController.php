@@ -2,7 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Test;
+use AppBundle\Form\Type\TestType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +13,10 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="home", defaults={"_locale": "sr"}, requirements={
+     *    "_locale": "en|sr"
+     * })
+     * @Method({"GET"})
      */
     public function homeAction(Request $request)
     {
@@ -47,5 +53,32 @@ class DefaultController extends Controller
         );
     }
 
+    /**
+     * @Route("/test/add", name="addTest", defaults={"_locale": "sr"}, requirements={
+     *    "_locale": "en|sr"
+     * })
+     * @Method({"GET", "POST"})
+     */
+    public function addTestAction(Request $request)
+    {
+        $test = new Test();
+        $testForm = $this->createForm(new TestType(), $test);
 
+        if ($request->isMethod('POST'))
+        {
+            $testForm->submit($request->request->get($testForm->getName()));
+
+            if($testForm->isValid())
+            {
+                $testFormData = $testForm->getData();
+                var_dump($testFormData);
+            }
+        }
+
+        return $this->render(
+            'AppBundle:trt:addTest.html.twig', array(
+                'form' => $testForm->createView(),
+            )
+        );
+    }
 }
